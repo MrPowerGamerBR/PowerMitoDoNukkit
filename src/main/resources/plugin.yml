@@ -1,0 +1,16 @@
+name: PowerMitoDoPvP
+main: com.mrpowergamerbr.powermitodonukkit.PowerMitoDoNukkit
+version: "1.0.0"
+author: MrPowerGamerBR
+api: ["1.0.0"]
+description: Mito do PvP!
+commands:
+  mito:
+    description: Mito do PvP
+    usage: "/mito"
+  setmito:
+    description: Mito do PvP
+    usage: "/mito"
+  powermitodopvp:
+    description: Mito do PvP
+    usage: "/mito"

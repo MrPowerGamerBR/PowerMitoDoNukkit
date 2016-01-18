@@ -1,0 +1,29 @@
+#
+# PowerMitoDoNukkit - Um pequeno plugin de Mito do PvP.
+#
+# Criado por MrPowerGamerBR
+#
+# Website: http://mrpowergamerbr.com/
+# SparklyPower: http://sparklypower.net/
+#
+Mito:
+    AnunciarAoMudarDeMito: true
+    AnunciarAoEntrar: true
+    AnunciarAoSair: true
+    Raios: true
+    RodarComandos: false
+    Comandos:
+    - "money take {old_mito} 100"
+    - "money give {player} 100"
+    BloquearMundos: false
+    MundosBloqueados:
+    - world_the_end
+Mensagens:
+    Prefixo: "&8[&3&lMito do PvP&8]&a "
+    AnuncioAoMudar: "&a{player} é o novo Mito do PvP!"
+    AnuncioAoEntrar: "&aMito {player} entrou do Servidor!"
+    AnuncioAoSair: "&aMito {player} desconectou do Servidor!"
+    MitoAtual: "&dMito atual: {mito}"
+    MitoAlterado: "&dMito alterado com sucesso!"
+    ComandoSetMito: "&c/setmito player"
+    SemPermissao: "&cSem Permissão!"
