@@ -11,51 +11,54 @@ import cn.nukkit.utils.TextFormat;
 
 public class PowerMitoDoNukkit extends PluginBase {
 	public AsrielNukkitConfig asriel;
-	
-    String helloMessage;
+
+	String helloMessage;
 
 	public String mitoAtual = "Ninguém";
 
-    private static PowerMitoDoNukkit plugin;
+	private static PowerMitoDoNukkit plugin;
 
-    public static PowerMitoDoNukkit getPlugin(){
-        return plugin;
-    }
+	public static final String version = "v1.0.0";
+	public static final String pluginName = "PowerMitoDoNukkit";
+	
+	public static PowerMitoDoNukkit getPlugin(){
+		return plugin;
+	}
 
-    @Override
-    public void onEnable(){
-        plugin = this;
-        
-        this.initConfig();
-        this.loadCfg();
-        
-        asriel = new AsrielNukkitConfig(this);
-        
-        new Listeners(this);
-        new PowerMitoAPI(this);
-        
-        if (getConfig().exists("MitoAtual")) {
-        	mitoAtual = (String) getConfig().get("MitoAtual");
-        }
-    }
+	@Override
+	public void onEnable(){
+		plugin = this;
 
-    @Override
-    public void onDisable() {
-    	getConfig().set("MitoAtual", mitoAtual);
-    	
-    	saveConfig();
-    }
-    
-    public void initConfig(){
-        this.getDataFolder().mkdirs();
-        this.saveResource("config.yml");
-    }
+		this.initConfig();
+		this.loadCfg();
 
-    public void loadCfg(){
-        this.reloadConfig();
-    }
-    
-    public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3) {
+		asriel = new AsrielNukkitConfig(this);
+
+		new Listeners(this);
+		new PowerMitoAPI(this);
+
+		if (getConfig().exists("MitoAtual")) {
+			mitoAtual = (String) getConfig().get("MitoAtual");
+		}
+	}
+
+	@Override
+	public void onDisable() {
+		getConfig().set("MitoAtual", mitoAtual);
+
+		saveConfig();
+	}
+
+	public void initConfig(){
+		this.getDataFolder().mkdirs();
+		this.saveResource("config.yml");
+	}
+
+	public void loadCfg(){
+		this.reloadConfig();
+	}
+
+	public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3) {
 		if (arg1.getName().equalsIgnoreCase("mito")) {
 			String s = (String) asriel.get("Mensagens.MitoAtual");
 			String prefixo = (String) asriel.get("Mensagens.Prefixo");
