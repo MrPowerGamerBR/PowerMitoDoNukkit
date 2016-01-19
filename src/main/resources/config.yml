@@ -27,3 +27,12 @@ Mensagens:
     MitoAlterado: "&dMito alterado com sucesso!"
     ComandoSetMito: "&c/setmito player"
     SemPermissao: "&cSem Permissão!"
+    
+#
+# Temmie Updater - Verificador de Atualizações
+#
+# Criado por MrPowerGamerBR
+#
+TemmieUpdater:
+    VerificarUpdates: true
+    TemmieMetrics: true

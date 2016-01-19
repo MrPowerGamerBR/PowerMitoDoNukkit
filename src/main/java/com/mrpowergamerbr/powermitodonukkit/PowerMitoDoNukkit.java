@@ -1,12 +1,16 @@
 package com.mrpowergamerbr.powermitodonukkit;
 
+import java.io.File;
+
 import com.mrpowergamerbr.powermitodonukkit.api.PowerMitoAPI;
 import com.mrpowergamerbr.powermitodonukkit.listeners.Listeners;
 import com.mrpowergamerbr.powermitodonukkit.utils.AsrielNukkitConfig;
+import com.mrpowergamerbr.powermitodonukkit.utils.TemmieNukkitUpdater;
 
 import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.plugin.PluginBase;
+import cn.nukkit.utils.Config;
 import cn.nukkit.utils.TextFormat;
 
 public class PowerMitoDoNukkit extends PluginBase {
@@ -33,20 +37,28 @@ public class PowerMitoDoNukkit extends PluginBase {
 		this.loadCfg();
 
 		asriel = new AsrielNukkitConfig(this);
-
+		
 		new Listeners(this);
 		new PowerMitoAPI(this);
 
-		if (getConfig().exists("MitoAtual")) {
-			mitoAtual = (String) getConfig().get("MitoAtual");
+		Config config = new Config(new File(this.getDataFolder(), "dreemurr.yml"));
+		
+		if (config.exists("MitoAtual")) {
+			mitoAtual = (String) config.get("MitoAtual");
 		}
+		
+        if ((boolean) asriel.get("TemmieUpdater.VerificarUpdates")) {
+            new TemmieNukkitUpdater(this);
+        }
 	}
 
 	@Override
 	public void onDisable() {
-		getConfig().set("MitoAtual", mitoAtual);
-
-		saveConfig();
+		Config config = new Config(new File(this.getDataFolder(), "dreemurr.yml"));
+		
+		config.set("MitoAtual", mitoAtual);
+		
+		config.save();
 	}
 
 	public void initConfig(){
