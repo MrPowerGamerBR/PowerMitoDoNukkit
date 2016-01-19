@@ -1,5 +1,5 @@
 #
-# PowerMitoDoNukkit - Um pequeno plugin de Mito do PvP.
+# PowerMitoDoNukkit - Um pequeno plugin de Mito do PvP para o Nukkit.
 #
 # Criado por MrPowerGamerBR
 #
@@ -26,7 +26,7 @@ Mensagens:
     MitoAtual: "&dMito atual: {mito}"
     MitoAlterado: "&dMito alterado com sucesso!"
     ComandoSetMito: "&c/setmito player"
-    SemPermissao: "&cSem Permissão!"
+    SemPermissao: "&cSem Permissção!"
     
 #
 # Temmie Updater - Verificador de Atualizações
